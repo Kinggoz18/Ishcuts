@@ -65,7 +65,7 @@ function RemoveSlot(){
 //Function to sign out user
 function SignOut(){
     $(signout).on('click', ()=>{
-        let url = new URL('http://localhost:5500/IshHaircuts/account.html?adminKey=0');
+        let url = new URL('https://bright-fairy-5c5d8c.netlify.app/account.html?adminKey=0');
         window.location.replace(url);
     })
 }
