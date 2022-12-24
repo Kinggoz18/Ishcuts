@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel ='stylesheet' href='./styles/index.css'/>
+    <!-- SCRIPT LINKS -->
+    <script src="https://kit.fontawesome.com/e4c6fd0b9b.js" crossorigin="anonymous"></script>
+    <script defer src="./src/index.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
+    <title>Ish Haircut's</title>
+</head>
+<body>
+    <header>
+        <div class="MobileNav">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+            <img src="./img/ishcuts-logo.png" alt="ishcut logo">
+        </div>
+        <div class="DesktopNav">
+            <nav>
+                <ul class="desktopnav-list">
+                    <li><a href="#phoneSection">Phone</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./login.html">Login <i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="mobilenavbar">
+        <ul class="mobilenav-list">
+            <li><a href="#phoneSection">Phone</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./login.html">Login <i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="scheduleSection">
+            <div id="schedule">
+                    <summary>Available Bookings</summary>
+                    <ul id="schedule-list">
+                        <li id="Monday"><div class="day">Monday</div></li>
+                        <li id="Tuseday"><div class="day">Tuseday</div></li>
+                        <li id="Wednesday"><div class="day">Wednesday</div></li>
+                        <li id="Thursday"><div class="day">Thursday</div></li>
+                        <li id="Friday"><div class="day">Friday</div></li>
+                        <li id="Saturday"><div class="day">Saturday</div></li>
+                        <li id="Sunday"><div class="day">Sunday</div></li>
+                    </ul>
+            </div>
+            <div id="selected-slot"></div>
+            <p class="hide" id="bookError">*Select a slot*</p>
+        </section>
+        <section class="bookingSection">
+            <form class="bookingForm">
+                <span id ='booked-msg' class="hide">Booking Confirmed!</span>
+                <div class="bookingLogo">
+                    <img src="./img/shopIcon.png">
+                    <h2>Book your Haircut now</h2>
+                </div>
+                <div id="booking-userinfo">
+                    <input type="text" id="booking-name" placeholder="First Name" required>
+                    <input type="text" id="booking-last" placeholder="Last Name">
+                    <p class="hide" id="nameError">*Name field missing*</p>
+                    <input type="email" id="booking-email" placeholder="Email Address" required>
+                    <p class="hide" id="emailError">*Email address missing*</p>
+                    <input type="email" id="booking-phone" placeholder="Phone number">
+                    <p class="hide" id="phoneError">*Phone number missing*</p>
+                </div>
+                <div id="booking-hair">
+                    <h3>Select your cut</h3>
+                        <label id="fadebox">
+                        Fade Haircut
+                        <input type="radio" name="haircut" value="fade haircut">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label  id="taperbox">
+                        Taper Haircut
+                        <input type="radio" name="haircut" value="taper haircut">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="custombox">
+                        Custom Haircut
+                        <input type="radio" name="haircut" value="custom haircut">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p class="hide" id="haircutError">*Select a cut*</p>
+                </div>
+                <div id="booking-hairadd">
+                    <h3>Add to your cut</h3>
+                    <select name="Add-ons" class="addMenu" id="booking-add">
+                        <option value="0">Add to your Haircut</option>
+                        <option value="1">Line up</option>
+                        <option value="2">Full Line up (including beard)</option>
+                    </select>
+                </div>
+                <!--Append available dates here-->
+                <div id="booking-date"></div>
+                <div class="booking-notes">
+                    <textarea cols="20" rows="2" id="booking-note" placeholder="Leave a note"></textarea>
+                </div>
+                <button>Book Haircut</button>
+            </form>
+        </section>
+        <section id="phoneSection">
+            <h2>Phone</h2>
+            <h3><a href="tel:647-512-5385">647-512-5385</a></h3>
+        </section>
+    </main>
+    <footer>
+        <ul class="socials-list">
+            <li><a href= "https://t.snapchat.com/wKJjCOen" target="_blank"><i class="fa-brands fa-snapchat"></i></a></li>
+            <li><a href="https://instagram.com/ishcuts?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+<!--Photo by <a href="https://unsplash.com/@onatecan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathon Oski</a> on <a href="https://unsplash.com/s/photos/barbershop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  -->

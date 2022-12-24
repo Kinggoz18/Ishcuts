@@ -1,0 +1,99 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap');
+:root{
+    --lightGrey: rgb(49, 48, 48);
+    --darkGrey: rgb(24, 24, 24);
+    --completeGreen: #59C55E;
+}
+header{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    margin-bottom: 2em;
+    padding: 2em 0.5em;
+    width: 100vw !important
+}
+body{
+    background-color: var(--darkGrey);
+    overflow-x: clip;
+    max-width: 90vw;
+}
+.returnHome{
+    display: flex;
+    flex-direction: row;
+}
+.returnHome i{
+    margin: 0em 0.2em;
+    font-size: 1.3em;
+}
+header i{
+    margin-left: 0.5em;
+}
+main{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 90vw;
+}
+/* Headings */
+h1{
+    font-size: 2.5em;
+    font-family: 'Acme', sans-serif;
+    margin-bottom: 0.8em;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.5em;
+}
+a{
+    color: white;
+}
+/***************************************** BREAKPOINT for Large devices ********************************************************/
+@media screen and (min-width: 1010px){
+    main{
+        align-items: center;
+    }
+    video{
+        width: 300px !important;
+    }
+    .gallery{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+        position: relative;
+    }
+}
+/***************************************** BREAKPOINT for Medium devices ********************************************************/
+@media screen and (max-width: 1010px){
+    main{
+        align-items: center;
+    }
+    video{
+        width: 250px !important;
+    }
+    .gallery{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+        position: relative;
+    }
+}
+/***************************************** BREAKPOINT for small devices ********************************************************/
+@media screen and (max-width: 670px){
+    main{
+        align-items: center;
+    }
+    video{
+        width: 140px !important;
+        height: 250px !important;
+    }
+    .gallery{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+        position: relative;
+    }
+}

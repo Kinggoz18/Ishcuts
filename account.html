@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SCRIPT LINKS -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e4c6fd0b9b.js" crossorigin="anonymous"></script>
+
+    <!--
+        LOGIN Validation Script
+    -->
+    <script>
+        $(async function(){
+            let check = false;
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+            });
+            let send = {key: params.adminKey};
+            if (send['key'] == null || send['key']=='0') 
+            {
+                window.location.replace("./index.html");
+            }
+            else{
+                 check = await $.ajax({
+                url: 'https://ishcuts-api.herokuapp.com/AdminVerify',
+                type: 'POST',
+                data: send,
+                error: function(xhr){
+                    console.log(xhr.responseText);
+                    window.location.replace("./index.html");
+                }
+            });
+            }
+            if(!check){
+            window.location.replace("./index.html");
+        }
+        })
+    </script>
+    <!-- STYLE LINK -->
+    <link rel="stylesheet" href="./styles/account.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+</head>
+<body>
+    <header>
+        <h1>Admin Page</h1>
+        <div class="signout-btn">
+            <button class="signout">Sign out</button>
+        </div>
+    </header>
+    <main>
+        <div id="currentDate"></div>
+        <section id="schedule">
+            <h1>Build your weekly schedule</h1>
+            <div id="your-schedule">
+                <details open>
+                    <summary>Your schedule for week: <span id="currentWeek"></span></summary>
+                    <ul id="schedule-list">
+                        <li id="Monday"><div class="day">Monday</div></li>
+                        <li id="Tuseday"><div class="day">Tuseday</div></li>
+                        <li id="Wednesday"><div class="day">Wednesday</div></li>
+                        <li id="Thursday"><div class="day">Thursday</div></li>
+                        <li id="Friday"><div class="day">Friday</div></li>
+                        <li id="Saturday"><div class="day">Saturday</div></li>
+                        <li id="Sunday"><div class="day">Sunday</div></li>
+                    </ul>
+                </details>
+            </div>
+            <div>
+
+            </div>
+            <h3>Add a slot</h3>
+            <input class ="schedule-select" id="schedule-date" type="date">
+            <select name="Time" id="schedule-time">
+                <option value="0">Select a time</option>
+                <option value="11am - 12pm">11am - 12pm</option>
+                <option value="12pm - 13pm">12pm - 13pm</option>
+                <option value="13pm - 14pm">13pm - 14pm</option>
+                <option value="14pm - 15pm">14pm - 15pm</option>
+                <option value="15pm - 16pm">15pm - 16pm</option>
+                <option value="16pm - 17pm">16pm - 17pm</option>
+                <option value="17pm - 18pm">17pm - 18pm</option>
+                <option value="18pm - 19pm">18pm - 19pm</option>
+                <option value="19pm - 20pm">19pm - 20pm</option>
+            </select>
+            <button id="addTime">Add slot</button>
+        </section>
+        <section id="bookings">
+            <h1>Upcoming Bookings</h1>
+            <ul id="booking-list">
+                <li id="BMonday"><div class="day">Monday</div></li>
+                <li id="BTuseday"><div class="day">Tuseday</div></li>
+                <li id="BWednesday"><div class="day">Wednesday</div></li>
+                <li id="BThursday"><div class="day">Thursday</div></li>
+                <li id="BFriday"><div class="day">Friday</div></li>
+                <li id="BSaturday"><div class="day">Saturday</div></li>
+                <li id="BSunday"><div class="day">Sunday</div></li>
+            </ul>
+        </section>
+    </main>
+</body>
+<script defer src="./src/account.js" type="module"></script>
+</html>

@@ -1,0 +1,319 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap');
+:root{
+    --lightGrey: rgb(49, 48, 48);
+    --darkGrey: rgb(24, 24, 24);
+    --completeGreen: #59C55E;
+}
+header{
+    background-color: black;
+    color: aliceblue;
+    margin-bottom: 2em;
+    padding: 2em 0em;
+    width: 100%;
+}
+header i{
+    margin-left: 0.5em;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100vw !important;
+    overflow-x: hidden !important;
+    position: relative;
+}
+main{
+    padding: 1em;
+    width: 90vw;
+}
+
+details{
+    margin: 1em 0em;
+}
+
+/* Headings */
+h1{
+    font-size: 2.5em;
+    font-family: 'Acme', sans-serif;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.5em;
+}
+/*Section*/
+#booking, #bookings{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+/**/
+.slotId{
+    display:none !important;
+}
+/***************************************** BREAKPOINT for Large devices ********************************************************/
+@media screen and (min-width: 1010px){
+     /*Header section*/
+     header{
+        display: flex;
+        flex-direction: row;
+     }
+     header button{
+        justify-self: end;
+        cursor: pointer;
+     }
+     header div, header h1{
+        margin: 0em 1em;
+     }
+     .signout-btn{
+        display: grid;
+        flex-grow: 1;
+     }
+     header i{
+        font-size: 2.7em;
+        margin-right: 0.4em;
+    }
+    header h1{
+        align-self: center;
+    }
+    header button{  
+        border: none;
+        color: antiquewhite;
+        background-color: var(--lightGrey);
+        font-size: 1em;
+        font-weight: bold;
+        justify-self: flex-end;
+        width: 6em;
+    }
+    /*Booking Section */
+    .book-slot{
+        background-color: whitesmoke;
+        border: solid white 1px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        width: 190px !important;
+        margin: 0.2em;
+        padding: 0.2em;
+        text-align: center;
+    }
+    .book-slot div{
+        margin: 0.3em 0em;
+    }
+    .book-slot button{
+        background-color: var(--completeGreen);
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+    #booking-list{
+        display: grid;
+        grid-template-columns: 45% 45%; 
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0.8em;
+        margin-top: 0.5em;
+        padding: 0.2em;
+    }
+    #booking-list li{
+        align-items: center;
+        background-color: var(--lightGrey);
+        display: flex;
+        color: aliceblue;
+        flex-direction: column;
+        height: 220px !important;
+        overflow-x: scroll;
+        padding: 0.5em;
+    }
+    /* Schedule Section */
+    #schedule-list li div{
+        align-items: center;
+        display: flex;
+        padding: 0.5em;
+    }
+    #schedule-list li div .remove-slot{
+        background-color: red;
+        border: solid 1px black;
+        color: white;
+        margin-left: 2em;
+    }
+    #schedule-list li .day{
+        background-color: var(--lightGrey);
+        color: antiquewhite;
+    }
+}
+/***************************************** BREAKPOINT for Medium devices ********************************************************/
+@media screen and (max-width: 1010px){
+     /*Header section*/
+     header{
+        display: flex;
+        flex-direction: row;
+     }
+     header button{
+        justify-self: end;
+        cursor: pointer;
+     }
+     header div, header h1{
+        margin: 0em 1em;
+     }
+     .signout-btn{
+        display: grid;
+        flex-grow: 1;
+     }
+     header i{
+        font-size: 2.7em;
+        margin-right: 0.4em;
+    }
+    header h1{
+        align-self: center;
+    }
+    header button{  
+        border: none;
+        color: antiquewhite;
+        background-color: var(--lightGrey);
+        font-size: 1em;
+        font-weight: bold;
+        justify-self: flex-end;
+        width: 6em;
+    }
+    /*Booking Section */
+    .book-slot{
+        background-color: whitesmoke;
+        border: solid white 1px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        width: 190px !important;
+        margin: 0.2em;
+        padding: 0.2em;
+        text-align: center;
+    }
+    .book-slot div{
+        margin: 0.3em 0em;
+    }
+    .book-slot button{
+        background-color: var(--completeGreen);
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+    #booking-list{
+        display: grid;
+        grid-template-columns: 45% 45%; 
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0.8em;
+        margin-top: 0.5em;
+        padding: 0.2em;
+    }
+    #booking-list li{
+        align-items: center;
+        background-color: var(--lightGrey);
+        display: flex;
+        color: aliceblue;
+        flex-direction: column;
+        height: 220px !important;
+        overflow-x: scroll;
+        padding: 0.5em;
+    }
+    /* Schedule Section */
+    #schedule-list li div{
+        align-items: center;
+        display: flex;
+        padding: 0.5em;
+    }
+    #schedule-list li div .remove-slot{
+        background-color: red;
+        border: solid 1px black;
+        color: white;
+        margin-left: 2em;
+    }
+    #schedule-list li .day{
+        background-color: var(--lightGrey);
+        color: antiquewhite;
+    }
+}
+/***************************************** BREAKPOINT for Small devices ********************************************************/
+@media screen and (max-width: 670px){
+    /*Header section*/
+    header{
+        display: grid;
+        grid-template-columns: 23% 25% 50%;
+    }
+    header i{
+        font-size: 2.7em;
+        margin-right: 0.4em;
+    }
+    header h1{
+        align-self: center;
+    }
+    header button{  
+        border: none;
+        color: antiquewhite;
+        background-color: var(--lightGrey);
+        font-size: 1em;
+        font-weight: bold;
+        justify-self: flex-end;
+        width: 6em;
+    }
+    /*Booking Section */
+    .book-slot{
+        background-color: whitesmoke;
+        border: solid white 1px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        width: 190px !important;
+        margin: 0.2em;
+        padding: 0.2em;
+        text-align: center;
+    }
+    .book-slot div{
+        margin: 0.3em 0em;
+    }
+    .book-slot button{
+        background-color: var(--completeGreen);
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+    #booking-list{
+        display: grid;
+        grid-template-columns: 45% 45%; 
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0.8em;
+        margin-top: 0.5em;
+        padding: 0.2em;
+    }
+    #booking-list li{
+        align-items: center;
+        background-color: var(--lightGrey);
+        display: flex;
+        color: aliceblue;
+        flex-direction: column;
+        height: 220px !important;
+        overflow-x: scroll;
+        padding: 0.5em;
+    }
+    /* Schedule Section */
+    #schedule-list li div{
+        align-items: center;
+        display: flex;
+        padding: 0.5em;
+    }
+    #schedule-list li div .remove-slot{
+        background-color: red;
+        border: solid 1px black;
+        color: white;
+        margin-left: 2em;
+    }
+    #schedule-list li .day{
+        background-color: var(--lightGrey);
+        color: antiquewhite;
+    }
+
+}
