@@ -17,7 +17,6 @@ export class BookingObject{
                 url:'https://ishcuts-api.herokuapp.com/Admin/GetAllBookings',
                 type: 'POST',
                 success: (data)=>{
-                    console.log(data);
                     this.LoadBookings(data);
                     this.AppendBooking();
                 },
@@ -131,13 +130,11 @@ export class BookingObject{
     }
     //Function to remove a booking
     RemoveBooking(slotToRemove){
-        console.log(slotToRemove);
         $.ajax({
             url: 'https://ishcuts-api.herokuapp.com/RemoveBooking',
             type: 'DELETE',
             data: slotToRemove,
             success: (data)=>{
-                console.log(data);
                 location.reload();
             }
         });

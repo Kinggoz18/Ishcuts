@@ -39,7 +39,6 @@ function AddToSchedule(){
         let day = document.querySelector('#schedule-date').value;
         let time = document.querySelector("#schedule-time").value;
         if(time == '0' || day.length == 0){
-            console.log('Invalid Selection');
             return;
         }
         else{

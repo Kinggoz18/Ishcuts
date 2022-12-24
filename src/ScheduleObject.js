@@ -63,7 +63,6 @@ export class ScheduleObject{
                 url:'https://ishcuts-api.herokuapp.com/Schedule',
                 type: 'GET',
                 success: (data)=>{
-                    console.log(data);
                     this.LoadScheduleData(data);
                    if(!isClient){
                     this.AppendScheduleToList();
@@ -71,7 +70,6 @@ export class ScheduleObject{
                    if(isClient){
                     this.FindTimeSlot();
                    }
-                    console.log(this.ScheduleData);
                 },
                 error: function(err){
                     console.log(err);
@@ -115,7 +113,6 @@ export class ScheduleObject{
     }
     //Function to add the time slot to the schedule list then reload the page
     AddScheduleToList(current){
-        console.log(current)
         let weekDay = this.GetDay(current);
         
         switch(weekDay){
@@ -161,13 +158,11 @@ export class ScheduleObject{
     }
     //Function to remove a time slot
     RemoveSlot(slotToRemove){
-        console.log(slotToRemove);
         $.ajax({
             url: 'https://ishcuts-api.herokuapp.com/RemoveSchedule',
             type: 'DELETE',
             data: slotToRemove,
             success: (data)=>{
-                console.log(data);
                 location.reload();
             }
         });

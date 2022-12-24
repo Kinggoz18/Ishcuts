@@ -61,7 +61,7 @@ function GetFormData(){
 
     let e = document.getElementById("booking-add");
     //Optional does not need validation
-    data['Addon'] = (e.options[e.selectedIndex].text == 'Add to your Haircut') ? 'No Addon' : e.options[e.selectedIndex].text;
+    data['Addon'] = (e.options[e.selectedIndex].text == 'Select an add-on') ? 'No add-on' : e.options[e.selectedIndex].text;
     data['Notes'] = document.getElementById('booking-note').value;
     data['Slot'] = booked;
     
@@ -119,7 +119,7 @@ function ValidateFormData(data){
     else{
         $('#haircutError').addClass('hide');
     }
-    console.log(data['Slot']);
+
     if(data['Slot']==null){
         $('#bookError').removeClass('hide');
         flag = false;
@@ -135,7 +135,6 @@ function GetSelectSlot(){
         let button = event.target;
         let id = $(button).prev().text();
         let date = $(button).next().text();
-        console.log(date);
         slotToRemove = {_id: id};
         let day = $(button).parent().parent().children('.day').text();
         booked = `${day} ${date}`;

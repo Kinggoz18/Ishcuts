@@ -4,6 +4,7 @@
 --lightGrey: rgb(49, 48, 48);
 --darkGrey: rgb(24, 24, 24);
 --completeGreen: #59C55E;
+--FormLight: #E6E0DB;
 }
 div, li, p, section{
     font-family: 'Acme', sans-serif;
@@ -23,9 +24,9 @@ body{
     overflow-x: hidden !important;
     position: relative;
 }
-#bookError, #nameError, #phoneError, #emailError, #bookError{
-    color: rgb(177, 35, 35);
-    font-size: 1.3em;
+#bookError, #nameError, #phoneError, #emailError, #bookError, #haircutError{
+    color: white;
+    font-size: 1em;
 }
 section{
     position: relative;
@@ -110,7 +111,7 @@ footer{
     -webkit-text-stroke: black 0.7px;
 }
 
-#fadebox  input, #custombox  input, #taperbox  input{
+#fadebox  input, #custombox  input, #taperbox  input, #buzzcutbox input{
     cursor: pointer;
     height: 0;
     opacity: 0;
@@ -118,7 +119,7 @@ footer{
     width: 0;
 }
 /* Create a custom checkbox */
-#fadebox, #custombox, #taperbox{
+#fadebox, #custombox, #taperbox, #buzzcutbox{
     display: block;
     position: relative;
     padding-left: 35px;
@@ -141,12 +142,12 @@ footer{
 }
 
 /* On mouse-over, add a grey background color */
-#fadebox:hover input ~ .checkmark, #taperbox:hover input ~ .checkmark, #custombox:hover input ~ .checkmark {
+#fadebox:hover input ~ .checkmark, #taperbox:hover input ~ .checkmark, #custombox:hover input ~ .checkmark, #buzzcutbox:hover input ~ .checkmark{
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-#fadebox input:checked ~ .checkmark, #taperbox input:checked ~ .checkmark,#custombox input:checked ~ .checkmark {
+#fadebox input:checked ~ .checkmark, #taperbox input:checked ~ .checkmark,#custombox input:checked ~ .checkmark, #buzzcutbox input:checked ~ .checkmark {
   background-color: var(--darkGrey);
 }
 
@@ -158,12 +159,12 @@ footer{
 }
 
 /* Show the checkmark when checked */
-#fadebox input:checked ~ .checkmark:after, #taperbox input:checked ~ .checkmark:after, #custombox input:checked ~ .checkmark:after {
+#fadebox input:checked ~ .checkmark:after, #taperbox input:checked ~ .checkmark:after, #custombox input:checked ~ .checkmark:after, #buzzcutbox input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-#fadebox .checkmark:after, #taperbox .checkmark:after, #custombox .checkmark:after {
+#fadebox .checkmark:after, #taperbox .checkmark:after, #custombox .checkmark:after, #buzzcutbox .checkmark:after {
   left: 9px;
   top: 5px;
   width: 1.8px;
@@ -175,6 +176,7 @@ footer{
   transform: rotate(45deg);
 }
 /*Form section*/
+
 #error-msg, #booked-msg{
     align-self: center;
     font-size: 2em;
@@ -197,18 +199,19 @@ footer{
     margin: 0.5em 0.5em;
 }
 .bookingForm > div > h3{
-    background-color: var(--lightGrey);
+    background-color: var(--FormLight);
     border-radius: 0.4em;
-    color:antiquewhite;
-    padding: 0.4em;
+    color:var(--darkGrey);
+    font-size: 1.3em;
+    padding: 0.5em;
+    text-align: center;
 }
 #booking-userinfo input{
     border: none;
-    border-bottom: 1px solid var(--darkGrey);
-    background-color: var(--lightGrey);
+    background-color: var(--FormLight);
     outline: none;
     padding: 0.3em 0.6em;
-    color: antiquewhite;
+    color: var(--darkGrey);
 }
 #phoneSection{
     color: rgb(237, 211, 177);
@@ -547,11 +550,13 @@ h3{
     font-size: 1em;
 }
 /*Styling for booking schedule list*/
+section{
+    padding: 1em;
+}
 .selected-slot{
     align-self: center;
 }
 #schedule{
-    align-items: center;
     display: flex;
     flex-direction: column;
 }
@@ -575,7 +580,7 @@ h3{
 .slot{
     border: solid black 1px;
     padding: 0.3em;
-    width: 42px !important;
+    width: 60px !important;
     font-size: 1.2em;
 }
 .book-slot{
@@ -592,17 +597,16 @@ h3{
     display: none !important;
 }
 .fa-solid.fa-bars{
-    padding: 0.5em;
     color: white;
     font-size: 1.7em;
-    margin-bottom: 1.2em;
 }
 .mobilenavbar{
     display: block !important;
 }
 .MobileNav{
-    display: grid;
-    grid-template-columns: 100%;
+    align-items: center;
+    display: flex;
+    margin: 0em 1em;
 }
 .mobilenav-list{
     align-items: center;
@@ -628,9 +632,6 @@ h3{
     padding-left: 0.4em;
 }
 /*Logo Section*/
-.logo{
-    padding-left: 0em;
-}
 
 .logo h1{
     font-family: 'Lobster', cursive;
@@ -673,16 +674,13 @@ h3{
     border: solid 2px var(--darkGrey);
 }
 .booking-notes{
-    display: grid;
-    grid-template-columns: 80%;
-    justify-content: center;
+    display: flex;
     margin-bottom: 0.5em;
 }
 .booking-notes textarea{
-    background-color: var(--lightGrey);
+    background-color: var(--FormLight);
     border: none;
-    border-bottom: 1px solid grey;
-    color: antiquewhite;
+    color: var(--darkGrey);
     margin: 0.5em 0.5em;
     font-size: 1em;
     outline: none;
@@ -708,4 +706,76 @@ h3{
 .socials-list li{
     padding: 1em;
 }
+}
+
+@media screen and (max-width: 500px) {
+    section{
+        padding: 0.5em;
+    }
+    #schedule-list{
+        background-color: white;
+        display: flex;
+        font-size: 0.85em;
+        grid-column-gap: 0em;
+        justify-content: center;
+        overflow-x: scroll;
+        padding: 0.2em;
+        width: 100%;
+    }
+    #schedule-list li{
+        font-size: 0.6em;
+    }
+    .day{
+        text-align: center;
+        margin-bottom: 0.2em;
+    }
+    .slot{
+        border: solid black 1px;
+        padding: 0.3em;
+        width: 50px !important;
+        font-size: 1em;
+    }
+    .book-slot{
+        border-radius: 0em;
+        border: none;
+        background-color: var(--lightGrey);
+        color: antiquewhite;
+        font-size: 1em;
+        margin-top: 0.3em;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 400px) {
+    #schedule-list{
+        background-color: white;
+        display: flex;
+        font-size: 0.85em;
+        grid-column-gap: 0em;
+        justify-content: center;
+        overflow-x: scroll;
+        padding: 0.2em;
+        width: 100%;
+    }
+    #schedule-list li{
+        font-size: 0.56em;
+    }
+    .day{
+        text-align: center;
+        margin-bottom: 0.2em;
+    }
+    .slot{
+        border: solid black 1px;
+        padding: 0.3em;
+        width: 42px !important;
+        font-size: 1.2em;
+    }
+    .book-slot{
+        border-radius: 0em;
+        border: none;
+        background-color: var(--lightGrey);
+        color: antiquewhite;
+        font-size: 1.2em;
+        margin-top: 0.3em;
+        width: 100%;
+    }
 }

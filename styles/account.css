@@ -6,6 +6,7 @@
     --completeGreen: #59C55E;
 }
 header{
+    display: flex;
     background-color: black;
     color: aliceblue;
     margin-bottom: 2em;
@@ -239,10 +240,6 @@ h3{
 /***************************************** BREAKPOINT for Small devices ********************************************************/
 @media screen and (max-width: 670px){
     /*Header section*/
-    header{
-        display: grid;
-        grid-template-columns: 23% 25% 50%;
-    }
     header i{
         font-size: 2.7em;
         margin-right: 0.4em;
@@ -267,10 +264,12 @@ h3{
         display: flex;
         flex-direction: column;
         font-weight: bold;
-        width: 190px !important;
+        font-size: 0.8em;  
         margin: 0.2em;
         padding: 0.2em;
         text-align: center;
+
+        width: 135px !important;
     }
     .book-slot div{
         margin: 0.3em 0em;

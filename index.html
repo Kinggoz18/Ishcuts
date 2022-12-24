@@ -15,11 +15,11 @@
 </head>
 <body>
     <header>
-        <div class="MobileNav">
-            <i class="fa-solid fa-bars"></i>
-        </div>
         <div class="logo">
             <img src="./img/ishcuts-logo.png" alt="ishcut logo">
+        </div>
+        <div class="MobileNav">
+            <i class="fa-solid fa-bars"></i>
         </div>
         <div class="DesktopNav">
             <nav>
@@ -63,37 +63,42 @@
                     <h2>Book your Haircut now</h2>
                 </div>
                 <div id="booking-userinfo">
-                    <input type="text" id="booking-name" placeholder="First Name" required>
+                    <input type="text" id="booking-name" placeholder="*First Name*" required>
                     <input type="text" id="booking-last" placeholder="Last Name">
-                    <p class="hide" id="nameError">*Name field missing*</p>
-                    <input type="email" id="booking-email" placeholder="Email Address" required>
+                    <p class="hide" id="nameError">*First name is required to complete booking*</p>
+                    <input type="email" id="booking-email" placeholder="*Email Address*" required>
                     <p class="hide" id="emailError">*Email address missing*</p>
-                    <input type="email" id="booking-phone" placeholder="Phone number">
+                    <input type="email" id="booking-phone" placeholder="*Phone number*">
                     <p class="hide" id="phoneError">*Phone number missing*</p>
                 </div>
                 <div id="booking-hair">
                     <h3>Select your cut</h3>
                         <label id="fadebox">
                         Fade Haircut
-                        <input type="radio" name="haircut" value="fade haircut">
+                        <input type="radio" name="haircut" value="Fade haircut"/>
                         <span class="checkmark"></span>
                     </label>
                     <label  id="taperbox">
                         Taper Haircut
-                        <input type="radio" name="haircut" value="taper haircut">
+                        <input type="radio" name="haircut" value="Taper haircut"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="buzzcutbox">
+                        Buzzcut
+                        <input type="radio" name="haircut" value="Buzz cut"/>
                         <span class="checkmark"></span>
                     </label>
                     <label id="custombox">
                         Custom Haircut
-                        <input type="radio" name="haircut" value="custom haircut">
+                        <input type="radio" name="haircut" value="Custom haircut"/>
                         <span class="checkmark"></span>
                     </label>
-                    <p class="hide" id="haircutError">*Select a cut*</p>
+                    <p class="hide" id="haircutError">*Please select a haircut*</p>
                 </div>
                 <div id="booking-hairadd">
-                    <h3>Add to your cut</h3>
+                    <h3>Add to your haircut</h3>
                     <select name="Add-ons" class="addMenu" id="booking-add">
-                        <option value="0">Add to your Haircut</option>
+                        <option value="0">Select an add-on</option>
                         <option value="1">Line up</option>
                         <option value="2">Full Line up (including beard)</option>
                     </select>
