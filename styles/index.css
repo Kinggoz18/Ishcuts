@@ -334,9 +334,10 @@ a{
         }
         .addMenu{
             border: none;
-            background-color: var(--lightGrey);
-            color: antiquewhite;
+            background-color: var(--FormLight);
+            color: var(--darkGrey);
             font-size: 1.3em;
+            font-weight: bold;
             padding: 0.5em;
         }
         .booking-notes{
@@ -481,8 +482,9 @@ a{
     }
     .addMenu{
         border: none;
-        background-color: var(--lightGrey);
-        color: antiquewhite;
+        background-color: var(--FormLight);
+        color: var(--darkGrey);
+        font-weight: bold;
         padding: 0.5em;
     }
     .booking-notes{
@@ -643,8 +645,9 @@ section{
 /*Booking form section*/
 .addMenu{
     border: none;
-    background-color: var(--lightGrey);
-    color: antiquewhite;
+    background-color: var(--FormLight);
+    color: var(--darkGrey);
+    font-weight: bold;
     padding: 0.5em;
 }
 .addMenu option{
