@@ -24,9 +24,10 @@ body{
     overflow-x: hidden !important;
     position: relative;
 }
-#bookError, #nameError, #phoneError, #emailError, #bookError, #haircutError{
+#bookError, #nameError, #phoneError, #emailError, #bookError, #haircutError, #selectionErr, #total{
+    padding: 0.5em;
     color: white;
-    font-size: 1em;
+    font-size: 1.3em;
 }
 section{
     position: relative;

@@ -36,7 +36,6 @@ export class BookingObject{
                 name: name,
                 phone: number,
                 haircut: haircut,
-                Addon: element['Addon'],
                 Note: element['Note'],
                 slot: null,
                 id: element['_id']
@@ -100,31 +99,31 @@ export class BookingObject{
     //Appends the BookingData to the booking list
     AppendBooking(){
         this.BookingData.Monday.forEach(element=>{
-            let newText = $(this.listIDs[1]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']}</div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[1]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']}</div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[1]).html(newText);
         });
         this.BookingData.Tuseday.forEach(element=>{ 
-            let newText = $(this.listIDs[2]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[2]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[2]).html(newText);
         });
         this.BookingData.Wednesday.forEach(element=>{
-            let newText = $(this.listIDs[3]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[3]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[3]).html(newText);
         });
         this.BookingData.Thursday.forEach(element=>{
-            let newText = $(this.listIDs[4]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[4]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[4]).html(newText);
         });
         this.BookingData.Friday.forEach(element=>{
-            let newText = $(this.listIDs[5]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[5]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[5]).html(newText);
         });
         this.BookingData.Saturday.forEach(element=>{
-            let newText = $(this.listIDs[6]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[6]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[6]).html(newText);
         });
         this.BookingData.Sunday.forEach(element=>{
-            let newText = $(this.listIDs[0]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} - ${element['Addon']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
+            let newText = $(this.listIDs[0]).html()+`<div class="book-slot"> <div>${element['name']} </div><div>${element['haircut']} </div><div>${element['slot']} </div><div>${element['Note']} </div><div>Phone: ${element['phone']} </div><div class="slotId">${element['id']}</div><button class="complete-slot">Complete</button></div>`;
             $(this.listIDs[0]).html(newText);
         });
     }

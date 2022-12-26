@@ -58,6 +58,7 @@
         <section class="bookingSection">
             <form class="bookingForm">
                 <span id ='booked-msg' class="hide">Booking Confirmed!</span>
+                <span id="total"></span>
                 <div class="bookingLogo">
                     <img src="./img/shopIcon.png">
                     <h2>Book your Haircut now</h2>
@@ -74,36 +75,36 @@
                 <div id="booking-hair">
                     <h3>Select your cut</h3>
                         <label id="fadebox">
-                        Fade Haircut
-                        <input type="radio" name="haircut" value="Fade haircut"/>
+                        Fade Haircut, with line up - $25
+                        <input type="radio" name="haircut" value="Fade Haircut, with line up"/>
                         <span class="checkmark"></span>
                     </label>
-                    <label  id="taperbox">
-                        Taper Haircut
-                        <input type="radio" name="haircut" value="Taper haircut"/>
+                    <label id="taperbox">
+                        Fade Haircut, with beard work - $30
+                        <input type="radio" name="haircut" value="Fade Haircut, with beard work"/>
                         <span class="checkmark"></span>
                     </label>
                     <label id="buzzcutbox">
-                        Buzzcut
-                        <input type="radio" name="haircut" value="Buzz cut"/>
+                        Buzzcut - $10
+                        <input type="radio" name="haircut" value="Buzzcut"/>
                         <span class="checkmark"></span>
                     </label>
                     <label id="custombox">
-                        Custom Haircut
-                        <input type="radio" name="haircut" value="Custom haircut"/>
+                        None
+                        <input type="radio" name="haircut" value="None"/>
                         <span class="checkmark"></span>
                     </label>
                     <p class="hide" id="haircutError">*Please select a haircut*</p>
                 </div>
                 <div id="booking-hairadd">
-                    <h3>Add to your haircut</h3>
+                    <h3>Single Services</h3>
                     <select name="Add-ons" class="addMenu" id="booking-add">
                         <option value="0">Select an add-on</option>
-                        <option value="1">Line up</option>
-                        <option value="2">Full Line up (including beard)</option>
+                        <option value="Line up">Line up - $10</option>
+                        <option value="Full Line up (including beard)">full Line up (including beard) - $10</option>
                     </select>
                 </div>
-                <!--Append available dates here-->
+                <p class="hide" id="selectionErr">*Please select either a haircut or a Single Service*</p>
                 <div id="booking-date"></div>
                 <div class="booking-notes">
                     <textarea cols="20" rows="2" id="booking-note" placeholder="Leave a note"></textarea>

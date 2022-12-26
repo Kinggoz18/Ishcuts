@@ -9,8 +9,10 @@ let logoBackground = document.querySelector('.logo-background');
 let backGroundIndex = 1;
 let formButton = document.querySelector('form button')
 let booked = null;
+let TotalFee = 0;
 let slotToRemove = null;
-
+let haircutOpt = document.querySelectorAll('input[name="haircut"]');
+let hairServiceOpt = document.querySelector('#booking-add');
 $(function() {
     //Load the schedule data
     Schedule.GetData(true);
@@ -39,6 +41,10 @@ $(function() {
             })
         }
     })
+    haircutOpt.forEach(Element=>{
+        Element.addEventListener('change', ()=>GetTotal());
+    })
+    hairServiceOpt.addEventListener('change', ()=>GetTotal());
 });
 
 
@@ -57,14 +63,24 @@ function GetFormData(){
     let last = document.querySelector('#booking-last').value;
     data['Name'] = first + ' ' + last;
     //get haircut
-    data['Haircut'] = document.querySelector('input[name="haircut"]:checked')==null? null : document.querySelector('input[name="haircut"]:checked').value;;
+    data['Haircut'] = document.querySelector('input[name="haircut"]:checked')==null? null : document.querySelector('input[name="haircut"]:checked').value;
 
     let e = document.getElementById("booking-add");
     //Optional does not need validation
-    data['Addon'] = (e.options[e.selectedIndex].text == 'Select an add-on') ? 'No add-on' : e.options[e.selectedIndex].text;
+    data['Addon'] = (e.options[e.selectedIndex].value == '0') ? null : e.options[e.selectedIndex].value;
     data['Notes'] = (document.getElementById('booking-note').value.length == 0) ? 'No Note' :document.getElementById('booking-note').value;
     data['Slot'] = booked;
     let final = ValidateFormData(data) == true ? data : false;
+
+    if(data['Addon'] != null && data['Haircut']!="None"){
+        $('#selectionErr').removeClass('hide');
+        final = false;
+    }else{
+        $('#selectionErr').addClass('hide');
+        if(data['Addon']!=null){
+            data['Haircut'] = data['Addon'];
+        }
+    }
     return final;
 }
 
@@ -111,7 +127,7 @@ function ValidateFormData(data){
     else{
         $('#emailError').addClass('hide');
     }
-    if(data['Haircut']==null || data['Haircut'] == undefined || data['Haircut'].length == 0){
+    if(data['Haircut']==null || data['Haircut'] == undefined || data['Haircut'].length == "None"){
         $('#haircutError').removeClass('hide');
         flag = false;
     }
@@ -151,7 +167,7 @@ function SendEmail(sendEmail, to, message){
             to_name: to,
             from_email: "Ishcuts@gmail.com",   //CHANGE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             from_name: "Ish Haircuts",
-            message:  `This is a booking confirmation for ${message}`,
+            message:  `This is a booking confirmation for ${message}. ${TotalFee}`,
             send_to: sendEmail
         }
     };
@@ -188,4 +204,50 @@ function SendConfirmation(to, message){
             Schedule.RemoveSlot(slotToRemove);
         }
     });
+}
+function GetTotal(){
+    let haircut = 0;
+    let hairselect = document.querySelector('input[name="haircut"]:checked').value;
+    let e = document.getElementById('booking-add');
+    let addon = e.options[e.selectedIndex].value;
+    switch(hairselect){
+        case 'Fade Haircut, with line up':
+        {
+            haircut=25;
+            break;
+        }
+        case 'Fade Haircut, with beard work':
+        {
+            haircut=30;
+            break;
+        }
+        case 'Buzzcut':
+        {
+            haircut=10;
+            break;
+        }
+        case 'None':{
+            haircut = 0;
+            break;
+        }
+    }
+    switch(addon){
+        case 'Select an add-on':
+        {
+            haircut = 0;
+            break;
+        }
+        case 'Line up':
+        {
+            haircut = (haircut!=0) ? haircut : 10;
+            break;
+        }
+        case 'Full Line up (including beard)':
+        {
+            haircut = (haircut!=0) ? haircut : 10;
+            break;
+        }
+    }
+    TotalFee =`Total: $${haircut}`;
+    $('#total').html(TotalFee);
 }
