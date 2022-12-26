@@ -68,7 +68,7 @@ function GetFormData(){
     let e = document.getElementById("booking-add");
     //Optional does not need validation
     data['Addon'] = (e.options[e.selectedIndex].value == '0') ? null : e.options[e.selectedIndex].value;
-    data['Notes'] = (document.getElementById('booking-note').value.length == 0) ? 'No Note' :document.getElementById('booking-note').value;
+    data['Note'] = (document.getElementById('booking-note').value.length == 0) ? 'No Note' :document.getElementById('booking-note').value;
     data['Slot'] = booked;
     let final = ValidateFormData(data) == true ? data : false;
 
