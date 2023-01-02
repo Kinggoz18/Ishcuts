@@ -4,7 +4,7 @@
 --lightGrey: rgb(49, 48, 48);
 --darkGrey: rgb(24, 24, 24);
 --completeGreen: #59C55E;
---FormLight: #E6E0DB;
+--FormLight: #f2efec;
 }
 div, li, p, section{
     font-family: 'Acme', sans-serif;
@@ -126,7 +126,7 @@ footer{
     padding-left: 35px;
     margin: 12px 0px;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.1em;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -190,7 +190,6 @@ footer{
 .bookingForm{
     background: url('../img/formBackground.jpg');
     background-size: contain;
-    border-radius: 1em;
     display: flex;
     color: antiquewhite;
     flex-direction: column;
@@ -204,6 +203,7 @@ footer{
     border-radius: 0.4em;
     color:var(--darkGrey);
     font-size: 1.3em;
+    margin-bottom: 1em;
     padding: 0.5em;
     text-align: center;
 }
@@ -261,18 +261,22 @@ a{
     flex-direction: column;
 }
 #schedule-list{
-    background-color: white;
-    display: flex;
+    background-color: var(--lightGrey);
+    display: grid;
     font-size: 1.7em;
-    grid-column-gap: 0.2em;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 0.5em;
     justify-content: center;
     overflow-x: scroll;
-    padding: 0.2em;
-    width: 100%;
+    padding: 1em;
 }
 #schedule-list li{
     font-size: 0.7em;
-    margin: 0em 0.7em;
+    background-color: white;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 0.5em;
+    width: 90px;
 }
 .day{
     text-align: center;
@@ -280,10 +284,8 @@ a{
 }
 .slot{
     text-align: center;
-    border: solid black 1px;
     font-size: 0.8em;
-    padding: 0.3em;
-    width: 90px;
+    padding: 0.3em 0em;
 }
 .book-slot{
     border-radius: 0em;
@@ -419,17 +421,22 @@ a{
     flex-direction: column;
 }
 #schedule-list{
-    background-color: white;
-    display: flex;
-    font-size: 1.7em;
-    grid-column-gap: 0.1em;
+    background-color: var(--lightGrey);
+    display: grid;
+    font-size: 1.2em;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 0.5em;
     justify-content: center;
     overflow-x: scroll;
-    padding: 0.2em;
-    width: 100%;
+    padding: 1em;
 }
 #schedule-list li{
     font-size: 0.7em;
+    background-color: white;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 0.5em;
+    width: 85px;
 }
 .day{
     text-align: center;
@@ -437,10 +444,8 @@ a{
 }
 .slot{
     text-align: center;
-    border: solid black 1px;
     font-size: 0.8em;
-    padding: 0.3em;
-    width: 85px;
+    padding: 0.3em 0em;
 }
 .book-slot{
     border-radius: 0em;
@@ -564,26 +569,29 @@ section{
     flex-direction: column;
 }
 #schedule-list{
-    background-color: white;
-    display: flex;
+    background-color: var(--lightGrey);
+    display: grid;
     font-size: 0.85em;
-    grid-column-gap: 0em;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 0.5em;
     justify-content: center;
     overflow-x: scroll;
-    padding: 0.2em;
-    width: 100%;
+    padding: 1em;
 }
 #schedule-list li{
-    font-size: 0.56em;
+    font-size: 0.6em;
+    background-color: white;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 0.5em;
+    width: 60px;
 }
 .day{
     text-align: center;
     margin-bottom: 0.2em;
 }
 .slot{
-    border: solid black 1px;
-    padding: 0.3em;
-    width: 60px !important;
+    padding: 0.3em 0em;
     font-size: 1.2em;
 }
 .book-slot{
@@ -717,26 +725,29 @@ section{
         padding: 0.5em;
     }
     #schedule-list{
-        background-color: white;
-        display: flex;
+        background-color: var(--lightGrey);
+        display: grid;
         font-size: 0.85em;
-        grid-column-gap: 0em;
+        grid-template-columns: auto auto auto auto auto auto auto;
+        grid-column-gap: 0.15em;
         justify-content: center;
         overflow-x: scroll;
-        padding: 0.2em;
-        width: 100%;
+        padding: 0em;
     }
     #schedule-list li{
         font-size: 0.6em;
+        background-color: white;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        padding: 0.5em;
+        width: 45px;
     }
     .day{
         text-align: center;
         margin-bottom: 0.2em;
     }
     .slot{
-        border: solid black 1px;
-        padding: 0.3em;
-        width: 50px !important;
+        padding: 0.3em 0em;
         font-size: 1em;
     }
     .book-slot{
@@ -751,27 +762,30 @@ section{
 }
 @media screen and (max-width: 400px) {
     #schedule-list{
-        background-color: white;
-        display: flex;
+        background-color: var(--lightGrey);
+        display: grid;
         font-size: 0.85em;
-        grid-column-gap: 0em;
+        grid-template-columns: auto auto auto auto auto auto auto;
+        grid-column-gap: 0.1em;
         justify-content: center;
         overflow-x: scroll;
-        padding: 0.2em;
-        width: 100%;
+        padding: 0em;
     }
     #schedule-list li{
-        font-size: 0.56em;
+        font-size: 0.6em;
+        background-color: white;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        padding: 0.5em;
+        width: 42px;
     }
     .day{
         text-align: center;
         margin-bottom: 0.2em;
     }
     .slot{
-        border: solid black 1px;
-        padding: 0.3em;
-        width: 42px !important;
-        font-size: 1.2em;
+        padding: 0.3em 0em;
+        font-size: 0.9em;
     }
     .book-slot{
         border-radius: 0em;
