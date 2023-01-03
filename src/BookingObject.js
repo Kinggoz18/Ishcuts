@@ -14,7 +14,7 @@ export class BookingObject{
     //Funtion to get booking data from API
     GetData(){
             $.ajax({
-                url:'https://ishcuts-api.herokuapp.com/Admin/GetAllBookings',
+                url:'https://web-production-364a.up.railway.app/GetAllBookings',
                 type: 'POST',
                 success: (data)=>{
                     this.LoadBookings(data);
@@ -130,7 +130,7 @@ export class BookingObject{
     //Function to remove a booking
     RemoveBooking(slotToRemove){
         $.ajax({
-            url: 'https://ishcuts-api.herokuapp.com/RemoveBooking',
+            url: 'https://web-production-364a.up.railway.app/RemoveBooking',
             type: 'DELETE',
             data: slotToRemove,
             success: (data)=>{

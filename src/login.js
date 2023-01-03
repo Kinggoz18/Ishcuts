@@ -23,7 +23,7 @@ async function Login(){
         password: password
     };
     let value = await $.ajax({
-        url: 'https://ishcuts-api.herokuapp.com/Admin',
+        url: 'https://web-production-364a.up.railway.app/Admin',
             type: "POST",
             data: send,
             success: function(data){

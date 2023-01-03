@@ -31,7 +31,7 @@ $(function() {
         else{
             $('#booked-msg').removeClass('hide');
             $.ajax({
-                url: 'https://ishcuts-api.herokuapp.com/CreateBooking',
+                url: 'https://web-production-364a.up.railway.app/CreateBooking',
                 type: "POST",
                 data: send,
                 success: function(data){

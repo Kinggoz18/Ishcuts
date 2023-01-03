@@ -60,7 +60,7 @@ export class ScheduleObject{
     //Funtion to get schedule data from API
     GetData(isClient){
             $.ajax({
-                url:'https://ishcuts-api.herokuapp.com/Schedule',
+                url:'https://web-production-364a.up.railway.app/Schedule',
                 type: 'GET',
                 success: (data)=>{
                     this.LoadScheduleData(data);
@@ -143,7 +143,7 @@ export class ScheduleObject{
     //Method to add a slot to the schdeule
     AddSlotToSchedule(slotData){
         $.ajax({
-            url:'https://ishcuts-api.herokuapp.com/Schedule',
+            url:'https://web-production-364a.up.railway.app/Schedule',
             type: 'POST',
             data: slotData,
             success: (data)=>{
@@ -159,7 +159,7 @@ export class ScheduleObject{
     //Function to remove a time slot
     RemoveSlot(slotToRemove){
         $.ajax({
-            url: 'https://ishcuts-api.herokuapp.com/RemoveSchedule',
+            url: 'https://web-production-364a.up.railway.app/RemoveSchedule',
             type: 'DELETE',
             data: slotToRemove,
             success: (data)=>{
