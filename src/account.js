@@ -64,7 +64,7 @@ function RemoveSlot(){
 //Function to sign out user
 function SignOut(){
     $(signout).on('click', ()=>{
-        let url = new URL('https://web-production-364a.up.railway.app/account.html?adminKey=0');
+        let url = new URL('https://bright-fairy-5c5d8c.netlify.app/account.html?adminKey=0');
         window.location.replace(url);
     })
 }
